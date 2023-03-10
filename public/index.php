@@ -10,6 +10,14 @@ require __DIR__ . '/../vendor/autoload.php';
 define('VIEWS', dirname(__DIR__).DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR);
 define('SCRIPTS', dirname($_SERVER['SCRIPT_NAME']).DIRECTORY_SEPARATOR );
 
+
+const DB_NAME = "myAPP";
+const DB_HOST ="localhost";
+const DB_USER ="root";
+
+
+
+
 // Instancier un nouvel objet Router en passant l'URL actuelle à la classe
 $router = new Router($_GET['url']);
 

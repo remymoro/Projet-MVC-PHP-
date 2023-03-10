@@ -8,7 +8,7 @@
         <h2><?= $params['post']->content ?></h2>
         </div>
         <div class="card-footer">
-        <h2><?= $params['post']->created_at ?></h2>
+        <h2><?= $params['post']->created_at?></h2>
         </div>
         
         <div class="btn d-flex w-100 justify-content-end  ">

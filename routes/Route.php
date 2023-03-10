@@ -46,7 +46,7 @@ class Route {
             throw new Exception("Le contrôleur '$controllerName' n'existe pas");
         }
     
-        $controller = new $controllerName(new DBConnection('myApp', 'localhost', 'root', ''));
+        $controller = new $controllerName(new DBConnection(DB_NAME,DB_HOST,DB_USER,DB_PASSWORD));
     
         if (!method_exists($controller, $methodName)) {
             throw new Exception("La méthode '$methodName' n'existe pas dans le contrôleur '$controllerName'");
