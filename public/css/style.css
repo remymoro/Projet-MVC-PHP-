@@ -1,58 +1,292 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap');
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+:root{
+  --font-familly-primary: 'Poppins', sans-serif;
+  --border-card: 1px solid #e5e5e5;
+}
+
+a{
+  text-decoration: none;
+  
+}
+
+li{
+  list-style: none;
+}
+
+
+header{
+  font-family:var(--font-familly-primary);
+}
+
+
+
+/* section posts */
+
+.card{
+  border-radius: 47px;
+  border: var(--border-card);
+   
+}
+
+.container-grid {
+  height: calc(100vh - 120px);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 1rem;
+  place-items: center;
 }
 
 
 
 
 
+
+
+
+
+
+
+
+
+/* Containers */
 .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    
-  }
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
   
-
-
-
-
-/*  padding-class*/
-
-  .p-1 {
-    padding: 0.25rem;
-  }
-  
-  .p-2 {
-    padding: 0.5rem;
-  }
-  
-  .p-3 {
-    padding: 1rem;
-  }
-  
-  .p-4 {
-    padding: 1.5rem;
-  }
-  
-  .p-5 {
-    padding: 10rem;
-  }
-  
-
-
-/* debug classe générique de débeug*/
-.b1{
-    background-color: red;
 }
 
-.b2{
-    background-color: green;
+.container-fluid {
+  width: 100%;
+  margin: 0 auto;
+  max-width: none;
+}
+
+.container-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 
-.b3{
-    background-color: blue;
+
+
+
+
+
+
+/* Flexbox */
+.d-flex {
+  display: flex;
 }
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.flex-row{
+  flex-direction: row;
+}
+
+.flex-shrink {
+  flex-shrink: 1;
+}
+
+.flex-basis-auto {
+  flex-basis: auto;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.justify-content-start {
+  justify-content: flex-start;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.justify-content-space-between {
+  justify-content: space-between;
+}
+
+.justify-content-space-around {
+  justify-content: space-around;
+}
+
+
+/* Alignment and justification */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Widths */
+.w-25 {
+  width: 25%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.w-75 {
+  width: 75%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+
+
+
+/* height */
+
+.h-25 {
+  height: 25%;
+}
+
+.h-50 {
+  height: 50%;
+}
+
+
+.h-75 {
+  height: 75%;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.h-100vh {
+  height: 100vh;
+  
+}
+
+
+
+
+
+
+/* Padding */
+.p-1 {
+  padding: 0.25rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.p-3 {
+  padding: 1rem;
+}
+
+.p-4 {
+  padding: 1.5rem;
+}
+
+.p-5 {
+  padding: 10rem;
+}
+
+/* Debugging */
+.b1 {
+  background-color: red;
+}
+
+.b2 {
+  background-color: green;
+}
+
+.b3 {
+  background-color: blue;
+}
+
+
+/* margin */
+
+
+.m-1 {
+  margin: 0.25rem;
+}
+
+.m-2 {
+  margin: 0.5rem;
+}
+
+.m-3 {
+  margin: 1rem;
+}
+
+.m-4 {
+  margin: 1.5rem;
+}
+
+
+
+/* margin top */
+.mt{
+  margin-top: 1rem;
+}
+
+/* margin bottom */
+.mb{
+  margin-bottom: 1rem;
+}
+
+/* margin left */
+
+.ml{
+  margin-left: 1rem;
+}
+
+/* margin right */
+
+.mr{
+  margin-right: 1rem;
+}
+
+

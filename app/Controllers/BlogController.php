@@ -16,20 +16,29 @@ class BlogController extends Controller
     // La méthode show prend un paramètre $id qui doit être un entier
     public function show(int $id)
     {
+       
+       $stmt = $this->db->getPDO()->prepare('SELECT * FROM `posts` WHERE id = ?');
+    //     attention  // erreur ici: execute() retourne soit true soit false, pas un objet PDOStatement
+        $stmt->execute([$id]);
+        $post = $stmt->fetch();
 
-        $req = $this->db->getPDO()->query("SELECT * FROM posts ");
-        $posts = $req->fetchAll();
-        // Crée un tableau avec une variable nommée 'id' qui contient la valeur de $id
-        $params = compact('id');
+   
+       
 
-        // Appelle la méthode view de la classe parente avec le paramètre 'blog/show' et les variables $params
-        return $this->view('blog/show', $params);
+        // Appelle la méthode view de la classe parente avec le paramètre 'blog/show'
+        return $this->view('blog/show', compact('post'));
+       
     }
 
 
 
     public function index()
-    {
+    {   
+        // Appelle la méthode view de la classe parente avec le paramètre 'blog/index'
+
+        $stmt = $this->db->getPDO()->query("SELECT * FROM posts ORDER BY  created_at DESC");
+        $posts = $stmt->fetchAll();
+        return $this->view('blog/index', compact('posts'));
         
     }
 }

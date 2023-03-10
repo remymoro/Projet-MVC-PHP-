@@ -9,26 +9,25 @@
 </head>
 <body>
     
-        <header>
-          <div class="logo">
-            
-          </div>
-         
-        
-        </header>
 
 
+<header class="d-flex container justify-content-space-between items-center mt  ">
+  <div class="logo">
+    <h1>MVC</h1>
+  </div>
+  <nav class="w-50 ">
+    <ul class="d-flex justify-content-space-between ">
+      <li><a href="#">Accueil</a></li>
+      <li><a href="#">A propos</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
 
-    <div class="container  ">
-     
-     <?= $content ?>
-
-
-
-
-    </div>
-
+<div class="container p-2">
+  <?= $content ?>
+</div>
 
 </body>
 </html>

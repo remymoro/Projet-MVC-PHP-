@@ -15,8 +15,8 @@ $router = new Router($_GET['url']);
 
 // Définir les routes de l'application en utilisant la méthode get() du routeur
 $router->get('/', 'App\Controllers\BlogController@welcome');
+$router->get('/posts/:id', 'App\Controllers\BlogController@show');
 $router->get('/posts/', 'App\Controllers\BlogController@index');
-$router->get('/post/:id', 'App\Controllers\BlogController@show');
 
 // Exécuter le routeur pour correspondre à la route demandée
 $router->run();

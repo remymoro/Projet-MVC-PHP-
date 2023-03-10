@@ -24,7 +24,7 @@ class Controller
 
 
     // Définition de la méthode view
-    public function view($path, $params = null)
+    public function view($path, array $params = null)
     {
         // Mettre en mémoire tampon la sortie
         ob_start();
@@ -36,15 +36,14 @@ class Controller
         require VIEWS . $path . '.php';
 
         // Extraire les paramètres s'ils existent
-        if ($params !== null) {
-            extract($params);
-        }
-
+       
         // Récupérer le contenu de la mise en mémoire tampon
         $content = ob_get_clean();
 
+    
+
         // Inclure le fichier de mise en page et afficher le contenu de la vue
-        require VIEWS . 'layout.php';
+        require VIEWS .'layout.php';
     }
 }
 

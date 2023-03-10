@@ -24,16 +24,24 @@ class Router {
         $this->routes['GET'][] = new Route($path , $action); 
     }
 
-    // On définit une méthode pour exécuter le routage
+   
+
+
     public function run() {
-        // On parcourt la liste des routes correspondant à la méthode HTTP de la requête courante
-        foreach($this->routes[$_SERVER['REQUEST_METHOD']] as $route){
-            // Si la route courante correspond à l'URL courante, on l'exécute
-            if($route->match($this->url)){
-                $route->execute();
+        // On vérifie que des routes sont définies pour la méthode HTTP de la requête courante
+        if (isset($this->routes[$_SERVER['REQUEST_METHOD']])) {
+            // On parcourt la liste des routes correspondant à la méthode HTTP de la requête courante
+            foreach($this->routes[$_SERVER['REQUEST_METHOD']] as $route){
+                // Si la route courante correspond à l'URL courante, on l'exécute
+                if($route->match($this->url)){
+                    $route->execute();
+                    return;
+                }
             }
         }
         // Si aucune route n'a été trouvée, on renvoie une erreur 404
-        return header('HTTP/1.0 404 Not Found');
+        header('HTTP/1.0 404 Not Found');
+        echo "404 Not Found";
     }
+    
 }
