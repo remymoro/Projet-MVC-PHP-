@@ -9,6 +9,14 @@
         <div class="card d-flex flex-column justify-content-space-around  w-100 h-75 p-3">
             <div class="card-header">
                 <h2><?= $post->title ?></h2>
+                
+                
+                <?php foreach($post->getTags() as $tag) :?>
+
+                  <?=  $tag->name ?>
+
+                <?php endforeach;?>
+
          </div>
             <div class="card-body">
                 <p><?= $post->getExcerpt() ?></p>
