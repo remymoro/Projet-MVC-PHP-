@@ -7,9 +7,9 @@
         
         <?php foreach($params['post']->getTags() as $tag) :?>
 
-<?=  $tag->name ?>
+                        <?=  $tag->name ?>
 
-<?php endforeach;?>
+                       <?php endforeach;?>
        
         
         <div class="card-body">

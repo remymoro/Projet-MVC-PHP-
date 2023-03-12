@@ -13,7 +13,7 @@
                 
                 <?php foreach($post->getTags() as $tag) :?>
 
-                  <?=  $tag->name ?>
+                  <a href="/tags/<?=$tag->id?>" class="btn btn-success"><?=$tag->name?></a>
 
                 <?php endforeach;?>
 
