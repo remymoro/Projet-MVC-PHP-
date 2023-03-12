@@ -2,6 +2,8 @@
 
 namespace Router;
 
+use App\Exceptions\NotFoundException;
+
 // On commence par définir la classe Router dans le namespace Router
 
 class Router {
@@ -39,9 +41,16 @@ class Router {
                 }
             }
         }
-        // Si aucune route n'a été trouvée, on renvoie une erreur 404
-        header('HTTP/1.0 404 Not Found');
-        echo "404 Not Found";
+        
+        // mis en place erreur 404
+
+
+        throw new NotFoundException('la page demande est introuvable');
+
+
+
+
+
     }
     
 }

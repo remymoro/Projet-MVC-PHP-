@@ -1,6 +1,8 @@
 <?php
 
 // Importer la classe Router du namespace Router
+
+use App\Exceptions\NotFoundException;
 use Router\Router;
 
 // Charger les dépendances de l'application
@@ -29,6 +31,15 @@ $router->get('/posts/', 'App\Controllers\BlogController@index');
 $router->get('/tags/:id', 'App\Controllers\BlogController@tag');
 
 // Exécuter le routeur pour correspondre à la route demandée
+
+try{
 $router->run();
+
+}catch(NotFoundException $e){
+    
+    return $e->error404();
+}
+
+
 
 ?>

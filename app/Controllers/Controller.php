@@ -48,7 +48,7 @@ abstract class  Controller
 
 
 
-
+ 
     protected function getDb(){
         return $this->db;
     }
