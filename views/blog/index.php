@@ -6,7 +6,7 @@
         
         
 
-        <div class="card d-flex flex-column justify-content-space-around  w-100 h-75 p-3">
+        <div class="card d-flex flex-column justify-content-space-around  w-100 h-75 p-3 b2 ">
             <div class="card-header">
                 <h2><?= $post->title ?></h2>
                 

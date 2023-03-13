@@ -25,6 +25,32 @@ abstract class Model
     }
 
 
+    public function update(int $id, array $data){
+
+        $sqlPartRequest = " ";
+        $i = 1;
+
+        foreach($data as $key => $value){
+
+            $comma = $i ===  count($data) ?  " " : ",";
+
+
+            $sqlPartRequest .= "{$key}=:{$key}{$comma}"; 
+            $i++;
+
+        }
+
+
+       $data['id'] = $id;
+       
+       return $this->query("UPDATE {$this->table} SET {$sqlPartRequest} WHERE id = :id", $data);
+
+       
+
+
+    }
+
+
     public function destroy(int $id): bool
     {
         return $this->query("DELETE FROM {$this->table} WHERE id = ?", [$id]);

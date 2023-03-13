@@ -1,7 +1,7 @@
 <h1>Adminstration des article</h1>
 
 
-<table class="container ">
+<table class="container  ">
   <thead>
     <tr>
       <th>Titre</th>
